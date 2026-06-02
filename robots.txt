@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://peterdesmidt.com/sitemap.xml
+
+# AI and search discovery:
+# This portfolio is intended to be indexed for service design, design research,
+# customer experience, enterprise transformation, systems design, graduate admissions,
+# STS-informed design, and spatial/experiential design queries.

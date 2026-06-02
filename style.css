@@ -1,49 +1,271 @@
+:root {
+  --bg: #ffffff;
+  --text: #080808;
+  --accent: #b20d38;
+  --muted: #555;
+}
+
+* { box-sizing: border-box; }
+
+html { font-size: 16px; }
+
 body {
   margin: 0;
-  padding: 48px 24px;
-  background: #f8f6f0;
-  color: #111;
-  font-family: Georgia, "Times New Roman", serif;
-  line-height: 1.55;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  line-height: 1.18;
 }
 
-main {
-  max-width: 720px;
+.site-nav {
+  position: fixed;
+  top: 84px;
+  left: 88px;
+  width: 120px;
+  z-index: 10;
 }
 
-h1, h2 {
-  font-weight: normal;
+.site-nav a {
+  display: block;
+  width: max-content;
+  color: var(--text);
+  text-decoration: none;
+  margin-bottom: 5px;
 }
 
-h1 {
-  font-size: 28px;
-  margin-bottom: 12px;
+.site-nav .name {
+  font-weight: 700;
+  margin-bottom: 7px;
 }
 
-h2 {
-  font-size: 18px;
-  margin-top: 48px;
-  border-top: 1px solid #111;
-  padding-top: 12px;
+.site-nav a:hover,
+.site-nav a.active {
+  color: var(--accent);
 }
 
-p {
-  font-size: 17px;
+.home-intro {
+  position: absolute;
+  left: 88px;
+  top: 245px;
+  width: 125px;
+  font-weight: 700;
 }
 
-nav {
-  margin: 36px 0;
+.two-column {
+  display: grid;
+  grid-template-columns: 140px 460px;
+  column-gap: 105px;
+  margin-left: 88px;
+  margin-top: 250px;
+  max-width: 760px;
 }
 
-nav a {
-  margin-right: 18px;
+.statement {
+  width: 130px;
+  font-weight: 700;
 }
 
-a {
-  color: #0000ee;
+.resume-list h1,
+.work-index h1,
+.project-page h1 {
+  font-size: 11px;
+  margin: 0 0 9px;
+  font-weight: 700;
+}
+
+.entry {
+  position: relative;
+  margin-bottom: 18px;
+  width: 310px;
+}
+
+.entry h2 {
+  font-size: 11px;
+  font-weight: 700;
+  margin: 0 0 2px;
+}
+
+.entry p {
+  margin: 0 0 2px;
+}
+
+.resume-list h1:not(:first-child) {
+  margin-top: 29px;
+}
+
+.work-index {
+  margin-left: 340px;
+  margin-top: 185px;
+  width: 330px;
+}
+
+.project {
+  display: block;
+  position: relative;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 700;
+  margin-bottom: 13px;
+  width: max-content;
+}
+
+.project:hover {
+  color: var(--accent);
+}
+
+
+
+.contact-card {
+  margin-left: 340px;
+  margin-top: 185px;
+  width: 250px;
+}
+
+.contact-card p { margin: 0 0 9px; }
+
+.contact-card a,
+.project-page a {
+  color: var(--accent);
   text-decoration: none;
 }
 
-a:hover {
-  text-decoration: underline;
+.contact-card a:hover,
+.project-page a:hover { text-decoration: underline; }
+
+.project-page {
+  margin-left: 340px;
+  margin-top: 160px;
+  width: 430px;
+  max-width: calc(100vw - 380px);
+}
+
+.project-page .breadcrumb {
+  margin: 0 0 28px;
+  color: var(--muted);
+}
+
+.project-page h1 {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.project-page .dek {
+  font-weight: 700;
+  max-width: 330px;
+  margin-bottom: 42px;
+}
+
+.project-page h2 {
+  font-size: 11px;
+  margin: 32px 0 8px;
+}
+
+.project-page p {
+  max-width: 360px;
+}
+
+@media (max-width: 760px) {
+  body { font-size: 12px; }
+
+  .site-nav {
+    position: static;
+    width: auto;
+    margin: 34px 28px 0;
+  }
+
+  .site-nav a {
+    margin-bottom: 6px;
+  }
+
+  .home-intro,
+  .two-column,
+  .work-index,
+  .contact-card,
+  .project-page {
+    position: static;
+    display: block;
+    margin: 84px 28px 0;
+    width: auto;
+    max-width: 420px;
+  }
+
+  .two-column {
+    margin-top: 72px;
+  }
+
+  .statement {
+    width: 150px;
+    margin-bottom: 54px;
+  }
+
+  .entry { width: auto; }
+}
+
+
+.site-title a {
+    color: #111111;
+    text-decoration: none;
+}
+
+.site-title a:hover {
+    color: #111111;
+}
+
+.contact-link {
+    color: #111111;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.contact-link:hover,
+.contact-link:focus,
+.contact-link:active {
+    color: #b3123f;
+}
+
+
+/* Navigation title and contact link behavior */
+.site-title a {
+    color: #111111;
+    text-decoration: none;
+}
+
+.site-title a:hover,
+.site-title a:focus,
+.site-title a:active {
+    color: #111111;
+}
+
+.contact-link {
+    color: #111111;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.contact-link:hover,
+.contact-link:focus,
+.contact-link:active {
+    color: #b3123f;
+}
+
+
+.themes {
+    margin-top: 80px;
+}
+
+.themes h2 {
+    font-size: 14px;
+    font-weight: normal;
+    margin-bottom: 12px;
+}
+
+.themes p {
+    line-height: 1.8;
+}
+
+.contact-note {
+    margin-top: 60px;
+    max-width: 420px;
+    line-height: 1.7;
 }
